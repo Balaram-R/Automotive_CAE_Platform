@@ -295,6 +295,7 @@ python main.py query "What happens in the crash test video?" --json
   ]
 }
 ```
+<img width="1915" height="957" alt="image" src="https://github.com/user-attachments/assets/35c33e90-0b7b-4876-89b0-cfd4f2970366" />
 
 ---
 
