@@ -314,16 +314,11 @@ This is enforced two ways:
 1. **Deterministic relevance gate** — rejects queries whose best match is too far in embedding space
 2. **Strict system prompt** — the LLM is instructed to answer only from retrieved context and to state limitations explicitly
 
----
-
-## 📜 License
-
-MIT © 2026
 
 <div align="center">
 <br/>
 
-**Built for engineers who need answers they can trust.**
+**Designed & Developed by : Balaram R**
 
 ⭐ Star this repo if you find it useful!
 
