@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Knowledge base files
+knowledge_base/*
+!knowledge_base/.gitkeep
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
+vectordb/
+logs/
+*.log
+.file_hashes.json
+vision_cache/
+outputs/
+
+# Videos / extracted data
+videos/
+frames/
+
+# Local ML models
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx
+
+# Secrets — NEVER commit
+.env
+.env.local
+.env.*
+!.env.example

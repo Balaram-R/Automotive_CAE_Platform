@@ -1,0 +1,60 @@
+# =============================================================================
+# Automotive CAE Knowledge Platform — Dependencies
+# =============================================================================
+
+# Core
+pyyaml>=6.0
+typing-extensions>=4.0
+python-dotenv>=1.0.0
+
+# LangChain + LangGraph
+langchain>=0.2.0
+langchain-community>=0.2.0
+langchain-core>=0.2.0
+langgraph>=0.1.0
+
+# Document loaders
+pypdf>=4.0
+python-docx>=1.1.0
+docx2txt>=0.8
+openpyxl>=3.1.0
+python-pptx>=0.6.23
+beautifulsoup4>=4.12.0
+unstructured>=0.14.0
+
+# LLM (Groq)
+groq>=0.11.0
+openai>=1.30.0                    # Also used as Groq-compatible client
+
+# Embeddings — local (default, no API key needed)
+sentence-transformers>=2.7.0
+
+# Vector stores
+chromadb>=0.5.0
+# faiss-cpu>=1.7.4               # Uncomment for FAISS
+# qdrant-client>=1.9.0           # Uncomment for Qdrant
+# pinecone-client>=3.0.0         # Uncomment for Pinecone
+# pymilvus>=2.4.0                # Uncomment for Milvus
+
+# Image processing
+Pillow>=10.0.0
+pytesseract>=0.3.10
+# easyocr>=1.7.0                 # Uncomment for EasyOCR
+
+# Audio / Video
+openai-whisper>=20231117
+moviepy>=2.0.0                 # Video audio extraction + key frames
+imageio-ffmpeg>=0.4.9          # Bundled ffmpeg binary (no system install needed)
+
+# Token counting
+tiktoken>=0.7.0
+
+# Semantic chunking (optional)
+# langchain-experimental>=0.2.0
+
+# Utilities
+requests>=2.31.0
+numpy>=1.24.0
+
+# Web UI
+streamlit>=1.40.0

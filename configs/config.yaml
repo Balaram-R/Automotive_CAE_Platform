@@ -1,0 +1,75 @@
+# =============================================================================
+# Automotive CAE Knowledge Platform — Configuration
+# =============================================================================
+#
+# QUICK START:
+#   1. Copy .env.example to .env → add GROQ_API_KEY
+#   2. Drop ANY files into knowledge_base/ (flat, no subfolders needed)
+#   3. python main.py ingest
+#   4. python main.py query "What are the FEA boundary conditions?"
+#   5. python main.py chat
+#
+
+knowledge_base:
+  root_dir: "knowledge_base"
+  scan_subdirs: true
+  hash_tracking_file: ".file_hashes.json"
+
+# Embeddings — runs locally by default, no API key needed
+embedding:
+  provider: "sentence_transformers"            # groq | openai | sentence_transformers | bge | nomic | jina
+  model_name: "all-MiniLM-L6-v2"              # Local model, auto-downloaded
+  dimension: 384
+  batch_size: 100
+
+# LLM — Groq (fast, free tier available)
+llm:
+  provider: "groq"
+  model_name: "openai/gpt-oss-20b"            # openai/gpt-oss-20b | qwen/qwen3.6-27b | openai/gpt-oss-120b
+  temperature: 0.1
+  max_tokens: 4096
+  # Vision model — used to caption image files at ingest time so RAG can
+  # answer questions about photos (crash tests, FEA screenshots, etc.).
+  # Must be a Groq multimodal model that accepts image_url content.
+  vision_model: "qwen/qwen3.6-27b"            # qwen/qwen3.6-27b | qwen/qwen3.8-27b
+  vision_enabled: true
+  # api_key: "${GROQ_API_KEY}"                 # Resolved from .env
+
+# Vector Store — Chroma (local, zero config)
+vector_store:
+  backend: "chroma"                            # chroma | faiss | qdrant | pinecone | milvus
+  collection_name: "automotive_cae"
+  persist_directory: "vectordb/chroma"
+
+# Chunking
+chunking:
+  strategy: "recursive_character"              # recursive_character | markdown | sentence | token | semantic
+  chunk_size: 1000
+  chunk_overlap: 200
+
+# OCR (for image files)
+ocr:
+  enabled: true
+  model: "tesseract"
+  languages: ["eng"]
+
+# Whisper (for audio/video transcription)
+whisper:
+  model_size: "base"                           # tiny | base | small | medium | large
+  language: null                               # null = auto-detect
+
+# Video extraction
+video:
+  extract_audio: true
+  extract_frames: true
+  frame_interval_seconds: 5.0
+  max_frames: 100
+
+# Logging
+logging:
+  level: "INFO"
+  log_dir: "logs"
+  log_file: "pipeline.log"
+  json_logs: false
+
+extra_document_extensions: []
