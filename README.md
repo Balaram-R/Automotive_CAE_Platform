@@ -15,11 +15,6 @@
   <img src="https://img.shields.io/badge/Embeddings-Local-FF6F00?style=for-the-badge&logo=huggingface&logoColor=white" alt="Sentence-Transformers"/>
 </p>
 
-<p>
-  <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="License"/>
-  <img src="https://img.shields.io/badge/status-active-brightgreen?style=flat-square" alt="Status"/>
-  <img src="https://img.shields.io/badge/PRs-welcome-blueviolet?style=flat-square" alt="PRs Welcome"/>
-</p>
 
 **A production-style RAG pipeline that turns raw engineering documents, crash-test photos, and videos into an answerable CAE knowledge base — with source citations, a relevance gate against hallucination, and a full web UI.**
 
